@@ -1,0 +1,195 @@
+@use './variable/' as *;
+@use './function/' as *;
+@use './product.scss';
+
+// IMG
+img {
+    display: block;
+    width: 100%;
+}
+/* bs換圖輪播 */
+//img需要自動fill到區塊內，所以要設定object-fit
+.carousel {
+    .carousel-item {
+        height: calc(100vh - 3.5rem);
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
+
+/* bs navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: $z-ex;
+    height: 3.5rem;
+
+    .navbar-brand {
+        img {
+            height: 2rem;
+        }
+    }
+
+    .navbar-nav {
+        position: relative;
+        width: 100%;
+    }
+
+    @media ($media-md) {
+        .navbar-nav {
+            padding: $space-s;
+            background-color: $alpha-b60;
+        }
+    }
+
+    .btn-search-w {
+        width: 5rem;
+    }
+
+    .icon {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        @media ($media-md-up) {
+            position: absolute;
+            right: 20px;
+        }
+
+        a {
+            font-size: map-get($font-size, m);
+            color: $color-light;
+            padding-right: 1rem;
+
+            &:hover {
+                color: $color-grey;
+            }
+        }
+    }
+}
+
+/* 共用區 */
+//區塊標題
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before,
+    &::after {
+        content: "";
+        // width: calc(50% - 4rem);
+        width: 40%;
+        height: 3px;
+        background-color: $color-deep;
+
+        @media ($media-md) {
+            width: 35%;
+        }
+
+        @media ($media-sm) {
+            width: 30%;
+        }
+    }
+
+    h2 {
+        width: 20%;
+        text-align: center;
+        font-size: map-get($font-size, l);
+        padding: 1rem;
+
+        @media ($media-md) {
+            width: 30%;
+        }
+
+        @media ($media-sm) {
+            width: 40%;
+        }
+
+        span {
+            display: block;
+            text-align: center;
+            font-size: map-get($font-size, s);
+        }
+    }
+
+}
+
+
+
+#new,
+#hot {
+    a {
+        position: relative;
+        display: block;
+    }
+}
+
+.list-title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $alpha-b60;
+    color: $color-light;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: $speed-slow;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/* 最新商品 */
+#new {
+    .mask {
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+    }
+
+    .mask-1 {
+        mask-image: url(../images/blobs-1.svg);
+    }
+
+    .mask-2 {
+        mask-image: url(../images/blobs-2.svg);
+    }
+
+    .mask-3 {
+        mask-image: url(../images/blobs-3.svg);
+    }
+}
+
+/* 熱門商品 */
+#hot {
+    .clip {
+        // clip-path: circle(49%); //圓形
+        // clip-path: ellipse(40% 50% at 50% 50%); //橢圓形
+        // clip-path: inset(5% 20% 15% 10%); //矩形:四個邊的位置(不是點)
+        // clip-path: polygon(50% 0, 0 80%, 100% 80%); //三角形
+        clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%); //梯形
+    }
+}
+
+/* 全部商品 */
+#all {
+    @media ($media-xl) {
+        .col-my-5 {
+            width: 20%;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+}
