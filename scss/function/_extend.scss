@@ -1,0 +1,83 @@
+@use "../variable/" as *;
+@use "../function/mixin" as *;
+// 繼承extend% (直接匯入，不需要調用)
+// RWD版本樣式不同，不可使用繼承
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%input-style {
+    border: 1px solid $color-lesser3;
+    border-radius: $radius-s;
+    padding: 4px;
+    font-size: map-get($font-size, s);
+
+    &::placeholder {
+        color: $color-lesser2;
+        font-size: map-get($font-size, xs);
+    }
+
+    &:focus {
+        outline: 2px solid $color-lesser4;
+    }
+}
+
+%btn-form {
+    border-radius: $radius-ex;
+    // 讓子元素置中
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; // 修改游標樣式為手指
+    height: 60px;
+    width: 210px;
+
+    // 套用玻璃擬態以下重覆樣式可不設定
+    // 修改<button>預設樣式
+    // background-color: #ffffff;
+    // border: 1px solid $color-lesser3;
+
+    span {
+        color: $color-lesser4;
+        font-size: map-get($font-size, xs);
+        font-weight: $bold;
+        letter-spacing: 0.7px;
+    }
+}
+
+%bg-cover {
+    background-position: center; //預設定位左上角，超過時剪裁右下角
+    background-size: cover; //fill超過比例自動剪裁
+    background-repeat: no-repeat;
+}
+
+//列表容器
+%box-list {
+    display: flex;
+    width: 80%;
+    max-width: 1360px;
+
+    .item {
+        flex: 1;
+        margin: $space-xy-m;
+        border-radius: $radius-l;
+        overflow: hidden; //clip會影響單行省略
+        @include bordered;
+    }
+}
+//多行省略
+%multiple-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+%single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
