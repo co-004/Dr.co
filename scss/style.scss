@@ -1,314 +1,135 @@
-<<<<<<< HEAD
-@use './variable/' as *;
-@use './function/' as *;
-@use './product.scss';
-
-// IMG
-img {
-    display: block;
-    width: 100%;
-}
-/* bs換圖輪播 */
-//img需要自動fill到區塊內，所以要設定object-fit
-.carousel {
-    .carousel-item {
-        height: calc(100vh - 3.5rem);
-
-        img {
-            object-fit: cover;
-            height: 100%;
-        }
-    }
-}
-
-/* bs navbar */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: $z-ex;
-    height: 3.5rem;
-
-    .navbar-brand {
-        img {
-            height: 2rem;
-        }
-    }
-
-    .navbar-nav {
-        position: relative;
-        width: 100%;
-    }
-
-    @media ($media-md) {
-        .navbar-nav {
-            padding: $space-s;
-            background-color: $alpha-b60;
-        }
-    }
-
-    .btn-search-w {
-        width: 5rem;
-    }
-
-    .icon {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-
-        @media ($media-md-up) {
-            position: absolute;
-            right: 20px;
-        }
-
-        a {
-            font-size: map-get($font-size, m);
-            color: $color-light;
-            padding-right: 1rem;
-
-            &:hover {
-                color: $color-grey;
-=======
 //style.scss
 @use "./variable" as *;
 @use "./function" as *;
 // @use "./reset";
-@use "./components" as *;
 
 @font-face {
-    font-family: "Mono";
-    src: url(/webfont/DepartureMono-Regular.otf);
+  font-family: "Mono";
+  src: url(/webfont/DepartureMono-Regular.otf);
+  font-display: swap;
+}
+body {
+  font-family: "Mono", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $color-main;
 }
 
-/* 導覽列 */
-#navbar {
-    position: fixed;
-    top: 0;
-    z-index: $z-ex;
-    width: 100%; //position會取消原本block的fill
-
-    display: flex;
-    justify-content: space-between;
-    padding: $space-m;
-
-    .logo {
-        width: 65px;
-    }
-
-    .navigation {
-        ul {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .icon {
-            a {
-                width: 35px;
-                height: 35px;
-                margin: 0 5px;
-                transition: .35s;
-            }
-        }
-
-        .menu {
-            @include glassmorphism;
-
-            a {
-                margin: $space-s;
-                padding: $space-y-s;
-                border-bottom: $border-m $alpha;
-                transition: $speed-fast;
-
-                &.active {
-                    color: $color-black;
-                }
-
-                &:hover {
-                    border-bottom: $border-m $color-deep;
-                }
->>>>>>> d093337d8975ec9cd8ffbdcebe20a74bc14fc763
-            }
-        }
-    }
+// 可選：設置 html 基本樣式
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-<<<<<<< HEAD
-/* 共用區 */
-//區塊標題
-.section-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// /* 導覽列 */
+// #navbar {
+//     position: fixed;
+//     top: 0;
+//     z-index: $z-ex;
+//     width: 100%; //position會取消原本block的fill
 
-    &::before,
-    &::after {
-        content: "";
-        // width: calc(50% - 4rem);
-        width: 40%;
-        height: 3px;
-        background-color: $color-deep;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: $space-m;
 
-        @media ($media-md) {
-            width: 35%;
-        }
+//     .logo {
+//         width: 65px;
+//     }
 
-        @media ($media-sm) {
-            width: 30%;
-        }
-    }
+//     .navigation {
+//         ul {
+//             display: flex;
+//             justify-content: flex-end;
+//         }
 
-    h2 {
-        width: 20%;
-        text-align: center;
-        font-size: map-get($font-size, l);
-        padding: 1rem;
+//         .icon {
+//             a {
+//                 width: 35px;
+//                 height: 35px;
+//                 margin: 0 5px;
+//                 transition: .35s;
+//             }
+//         }
 
-        @media ($media-md) {
-            width: 30%;
-        }
+//         .menu {
+//             @include glassmorphism;
 
-        @media ($media-sm) {
-            width: 40%;
-        }
+//             a {
+//                 margin: $space-s;
+//                 padding: $space-y-s;
+//                 border-bottom: $border-m $alpha;
+//                 transition: $speed-fast;
 
-        span {
-            display: block;
-            text-align: center;
-            font-size: map-get($font-size, s);
-        }
-    }
+//                 &.active {
+//                     color: $color-black;
+//                 }
 
-}
+//                 &:hover {
+//                     border-bottom: $border-m $color-deep;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-
-
-#new,
-#hot {
-    a {
-        position: relative;
-        display: block;
-    }
-}
-
-.list-title {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $alpha-b60;
-    color: $color-light;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0;
-    transition: $speed-slow;
-
-    &:hover {
-        opacity: 1;
-    }
-}
-
-/* 最新商品 */
-#new {
-    .mask {
-        mask-repeat: no-repeat;
-        mask-size: contain;
-        mask-position: center;
-    }
-
-    .mask-1 {
-        mask-image: url(../images/blobs-1.svg);
-    }
-
-    .mask-2 {
-        mask-image: url(../images/blobs-2.svg);
-    }
-
-    .mask-3 {
-        mask-image: url(../images/blobs-3.svg);
-    }
-}
-
-/* 熱門商品 */
-#hot {
-    .clip {
-        // clip-path: circle(49%); //圓形
-        // clip-path: ellipse(40% 50% at 50% 50%); //橢圓形
-        // clip-path: inset(5% 20% 15% 10%); //矩形:四個邊的位置(不是點)
-        // clip-path: polygon(50% 0, 0 80%, 100% 80%); //三角形
-        clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%); //梯形
-    }
-}
-
-/* 全部商品 */
-#all {
-    @media ($media-xl) {
-        .col-my-5 {
-            width: 20%;
-=======
 /* 共用標題 */
-.title {
-    margin-bottom: $space-m;
+// .title {
+//     margin-bottom: $space-m;
 
-    h2 {
-        position: relative;
-        font-family: $font-en;
-        font-size: map-get($font-size, xxxxl);
-        line-height: $line-h-s;
-        border-bottom: $border-l $color-black;
+//     h2 {
+//         position: relative;
+//         font-family: $font-en;
+//         font-size: map-get($font-size, xxxxl);
+//         line-height: $line-h-s;
+//         border-bottom: $border-l $color-black;
 
-        &::before {
-            content: "";
-            position: absolute;
-            left: -8px;
-            top: 5px;
+//         &::before {
+//             content: "";
+//             position: absolute;
+//             left: -8px;
+//             top: 5px;
 
-            width: 12px;
-            height: 12px;
-            border-radius: $radius-ex;
-            background-color: $color-lesser4;
-        }
+//             width: 12px;
+//             height: 12px;
+//             border-radius: $radius-ex;
+//             background-color: $color-lesser4;
+//         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            right: -10px;
-            bottom: 5px;
+//         &::after {
+//             content: "";
+//             position: absolute;
+//             right: -10px;
+//             bottom: 5px;
 
-            width: 8px;
-            height: 8px;
-            border-radius: $radius-ex;
-            background-color: $color-lesser4;
-        }
+//             width: 8px;
+//             height: 8px;
+//             border-radius: $radius-ex;
+//             background-color: $color-lesser4;
+//         }
 
-    }
+//     }
 
-    h3 {
-        font-family: $font-title;
-        font-size: map-get($font-size, m);
-        text-align: center; // 文字水平置中 */
-    }
-}
+//     h3 {
+//         font-family: $font-title;
+//         font-size: map-get($font-size, m);
+//         text-align: center; // 文字水平置中 */
+//     }
+// }
 
 /* 首頁主要內容區 */
-main {
-    &.index {
-        section {
-            @extend %flex-center;
-            flex-direction: column;
-            height: 100vh;
->>>>>>> d093337d8975ec9cd8ffbdcebe20a74bc14fc763
-        }
-    }
-}
+// main {
+//     &.index {
+//         section {
+//             @extend %flex-center;
+//             flex-direction: column;
+//             height: 100vh;
+//         }
+//     }
+// }
 
-<<<<<<< HEAD
-footer {
-    text-align: center;
-}
-=======
+// footer {
+//     text-align: center;
+// }
 // /* 最新消息 */
 // #news {
 //     background-color: $color-lesser1;
@@ -653,4 +474,3 @@ footer {
 //         }
 //     }
 // }
->>>>>>> d093337d8975ec9cd8ffbdcebe20a74bc14fc763

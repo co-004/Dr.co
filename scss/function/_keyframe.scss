@@ -1,4 +1,6 @@
-@use "./variable/" as *;
+@use "sass:meta";
+@use "../variable" as *;
+
 @keyframes rotate {
     0% {
       transform: rotate(0deg);
