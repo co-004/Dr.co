@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @use './variable/' as *;
 @use './function/' as *;
 @use './product.scss';
@@ -68,11 +69,71 @@ img {
 
             &:hover {
                 color: $color-grey;
+=======
+//style.scss
+@use "./variable" as *;
+@use "./function" as *;
+// @use "./reset";
+@use "./components" as *;
+
+@font-face {
+    font-family: "Mono";
+    src: url(/webfont/DepartureMono-Regular.otf);
+}
+
+/* 導覽列 */
+#navbar {
+    position: fixed;
+    top: 0;
+    z-index: $z-ex;
+    width: 100%; //position會取消原本block的fill
+
+    display: flex;
+    justify-content: space-between;
+    padding: $space-m;
+
+    .logo {
+        width: 65px;
+    }
+
+    .navigation {
+        ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .icon {
+            a {
+                width: 35px;
+                height: 35px;
+                margin: 0 5px;
+                transition: .35s;
+            }
+        }
+
+        .menu {
+            @include glassmorphism;
+
+            a {
+                margin: $space-s;
+                padding: $space-y-s;
+                border-bottom: $border-m $alpha;
+                transition: $speed-fast;
+
+                &.active {
+                    color: $color-black;
+                }
+
+                &:hover {
+                    border-bottom: $border-m $color-deep;
+                }
+>>>>>>> d093337d8975ec9cd8ffbdcebe20a74bc14fc763
             }
         }
     }
 }
 
+<<<<<<< HEAD
 /* 共用區 */
 //區塊標題
 .section-title {
@@ -186,10 +247,410 @@ img {
     @media ($media-xl) {
         .col-my-5 {
             width: 20%;
+=======
+/* 共用標題 */
+.title {
+    margin-bottom: $space-m;
+
+    h2 {
+        position: relative;
+        font-family: $font-en;
+        font-size: map-get($font-size, xxxxl);
+        line-height: $line-h-s;
+        border-bottom: $border-l $color-black;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 5px;
+
+            width: 12px;
+            height: 12px;
+            border-radius: $radius-ex;
+            background-color: $color-lesser4;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            bottom: 5px;
+
+            width: 8px;
+            height: 8px;
+            border-radius: $radius-ex;
+            background-color: $color-lesser4;
+        }
+
+    }
+
+    h3 {
+        font-family: $font-title;
+        font-size: map-get($font-size, m);
+        text-align: center; // 文字水平置中 */
+    }
+}
+
+/* 首頁主要內容區 */
+main {
+    &.index {
+        section {
+            @extend %flex-center;
+            flex-direction: column;
+            height: 100vh;
+>>>>>>> d093337d8975ec9cd8ffbdcebe20a74bc14fc763
         }
     }
 }
 
+<<<<<<< HEAD
 footer {
     text-align: center;
 }
+=======
+// /* 最新消息 */
+// #news {
+//     background-color: $color-lesser1;
+
+//     .box-list {
+//         @extend %box-list;
+
+//         .item {
+
+//             @media ($media-md) {
+//                 &:last-child {
+//                     display: none;
+//                 }
+//             }
+
+//             @media ($media-sm) {
+//                 &:nth-child(n+2) {
+//                     display: none;
+//                 }
+//             }
+
+//             figure {
+//                 height: 36vh;
+
+//                 img {
+//                     object-fit: cover;
+//                     height: 100%;
+//                 }
+//             }
+
+//             .content {
+//                 padding: $space-m;
+//                 transition: $speed-slow;
+
+//                 h2 {
+//                     @include title-s;
+//                     margin: $space-title-s;
+//                 }
+
+//                 p {
+//                     @extend %multiple-line;
+//                     -webkit-line-clamp: 5;
+//                     text-align: justify; // 齊行
+//                 }
+//             }
+
+//             &:hover {
+//                 figure {
+//                     position: relative;
+
+//                     // filter: brightness(80%);
+
+//                     &::before {
+//                         content: "";
+//                         position: absolute;
+//                         width: 100%;
+//                         height: 100%;
+//                         animation: fade-b $speed-slow both;
+//                     }
+//                 }
+
+//                 .content {
+//                     background-color: $color-light;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// /* 服務項目 */
+// #service {
+//     background-color: $color-bg2;
+
+//     .box-list {
+//         @extend %box-list;
+
+//         @media ($media-md) {
+//             flex-direction: column;
+//             height: 65vh; // 預設為hug，改為fixde(h65vh)
+
+//             .item {
+//                 &:last-child {
+//                     display: none;
+//                 }
+//             }
+//         }
+
+//         @media ($media-sm) {
+//             .item {
+//                 &:nth-child(n+3) {
+//                     display: none;
+//                 }
+//             }
+//         }
+
+//         .item {
+//             display: flex;
+//             align-items: flex-end;
+//             height: 60vh;
+//             @extend %bg-cover;
+
+//             &:nth-child(1) {
+//                 background-image: url(../images/pt_svc1.jpg);
+//             }
+
+//             &:nth-child(2) {
+//                 background-image: url(../images/pt_svc2.jpg);
+//             }
+
+//             &:nth-child(3) {
+//                 background-image: url(../images/pt_svc3.jpg);
+//             }
+
+//             &:nth-child(4) {
+//                 background-image: url(../images/pt_svc4.jpg);
+//             }
+
+//             a {
+//                 width: 100%; // 預設為hug，改為fill(w100%)
+//                 color: $color-light;
+//                 background-color: $alpha-b60;
+//                 padding: $space-xy-m;
+//                 transition: $speed-slow;
+
+//                 &:hover {
+//                     color: $alpha-b60;
+//                     background-color: $alpha-w50;
+//                 }
+
+//                 p {
+//                     @extend %single-line;
+//                 }
+//             }
+//         }
+//     }
+
+// }
+
+// // 關於我們
+// #about {
+//     position: relative;
+//     background-color: $alpha-p60; //統一色調方法：疊加半透明色彩
+
+//     div {
+//         @extend %flex-center;
+//         flex-direction: column;
+//         background-color: $alpha-w50;
+//         width: 60%; //flex主軸垂直，預設w為fill
+//         height: 100%; //flex主軸垂直，預設h為hug
+
+//         @media ($media-md) {
+//             width: 80%;
+//         }
+//         @media ($media-sm) {
+//             width: 90%;
+//         }
+//         .content {
+//             margin: 0 10%;
+//             padding: 20px;
+//             height: 60vh;
+//             overflow: scroll;
+
+//             //主滾動條
+//             &::-webkit-scrollbar {
+//                 width: 10px;
+//                 height: 10px;
+//             }
+
+//             //滾動條按鈕
+//             &::-webkit-scrollbar-button {
+//                 background-size: contain;
+//                 background-position: center;
+//                 background-repeat: no-repeat;
+//             }
+
+//             // 滾動條按鈕-上箭頭 
+//             &::-webkit-scrollbar-button:vertical:single-button:start {
+//                 background-image: url(../images/arrow-up.svg);
+//             }
+
+//             // 滾動條按鈕-下箭頭 
+//             &::-webkit-scrollbar-button:vertical:single-button:end {
+//                 background-image: url(../images/arrow-down.svg);
+//             }
+
+//             // 滾動條按鈕-左箭頭 
+//             &::-webkit-scrollbar-button:horizontal:single-button:start {
+//                 background-image: url(../images/arrow-left.svg);
+//             }
+
+//             // 滾動條按鈕-右箭頭 
+//             &::-webkit-scrollbar-button:horizontal:single-button:end {
+//                 background-image: url(../images/arrow-right.svg);
+//             }
+
+//             // 滾動條手把
+//             &::-webkit-scrollbar-thumb {
+//                 background-color: $color-lesser3;
+//                 border-radius: $radius-ex;
+//             }
+
+//             //滾動條軌道
+//             &::-webkit-scrollbar-track {
+//                 background-color: $color-bg1;
+//                 border-radius: $radius-ex;
+//             }
+
+//             // 滾動條底角
+//             &::-webkit-scrollbar-corner {
+//                 background-color: $alpha;
+//             }
+//         }
+
+//     }
+
+//     video {
+//         position: absolute;
+//         z-index: $z-bg;
+
+//         object-fit: cover;
+//         width: 100%;
+//         height: 100%;
+//         filter: brightness(110%) opacity(60%);
+//     }
+// }
+
+// /* 相關影片 */
+// #video {
+//     background-color: $color-bg3;
+
+//     @media ($media-md) {
+//         height: auto;
+//         padding: $space-y-m-vh;
+//     }
+
+//     div {
+//         height: 60vh;
+
+//         @media ($media-md) {
+//             width: 80%;
+//             height: auto;
+//         }
+
+//         video {
+//             height: 100%;
+
+//             @media ($media-md) {
+//                 width: 100%;
+//                 height: auto;
+//             }
+//         }
+//     }
+// }
+
+// /* 聯絡表單 */
+// #contact {
+//     position: relative;
+//     overflow: clip;
+
+//     @extend %bg-cover;
+//     background-image: url(../images/bg_contact.jpg);
+//     background-attachment: fixed; //行動裝置無用
+
+//     @media ($media-lg) {
+//         background-attachment: scroll; //行動裝置可以正常顯示
+//     }
+
+//     #contact-form {
+//         width: 32%;
+
+//         @media ($media-lg) {
+//             width: 50%;
+//         }
+
+//         @media ($media-sm) {
+//             width: 70%;
+//         }
+
+//         * {
+//             display: block;
+//             width: 100%;
+//         }
+
+//         label {
+//             padding-top: $space-m;
+//         }
+
+//         input,
+//         textarea {
+//             @extend %input-style;
+//         }
+
+//         small {
+//             margin: $space-y-m;
+//             font-size: map-get($font-size, xs);
+//         }
+
+//         button {
+//             @extend %btn-form;
+//             @include glassmorphism;
+//             margin: $space-x-a;
+
+//             &:hover {
+//                 animation: rotate 0.7s ease-in-out both;
+
+//                 span {
+//                     animation: storm 0.7s 0.06s ease-in-out both;
+//                 }
+//             }
+//         }
+//     }
+
+//     div {
+//         position: absolute;
+
+//         @media ($media-sm) {
+//             display: none;
+//         }
+//     }
+
+//     .flower_1 {
+//         bottom: -50px;
+//         left: 0;
+//         width: 20vw; //不管父元素，相對於視窗寬度
+//         transform: rotate(45deg);
+
+//         @media ($media-lg) {
+//             left: -20px;
+//             width: 35vw;
+//         }
+//     }
+
+//     .flower_2 {
+//         top: 5vh; //不管父元素，相對於視窗高度
+//         right: -20px;
+//         width: 23vw;
+//         transform: rotate(-36deg);
+
+//         @media ($media-lg) {
+//             top: 2vh;
+//             width: 36vw;
+//         }
+//     }
+// }
+>>>>>>> d093337d8975ec9cd8ffbdcebe20a74bc14fc763
