@@ -1,15 +1,26 @@
 // src/pages/Home.jsx
 import React from 'react';
-import '../../scss/Home.module.scss'; // 接下來我們會建立這個 SCSS
-
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from "../../scss/Home.module.scss";
 const Home = () => {
   return (
-    <div className="home">
+    <div className={styles.home}>
       {/* Hero 區塊 */}
-      <section className="hero">
-        <img src="/assets/nav-logo.svg" alt="logo" className="logo" />
-        <p className="tagline">A piece of curiosity</p>
+      <section className={styles.hero}>
+        
+        <div className={styles.heroLogo}>
+        <img src={`${import.meta.env.BASE_URL}assets/logo-word.svg`} alt="DreamaBit Logo" />
+        <img className={styles.heroAni} src={`${import.meta.env.BASE_URL}assets/babybit-1.svg`} alt="DreamaBit baby" />
+        </div>
+        <button className={styles.ctaBook}><img src={`${import.meta.env.BASE_URL}assets/btn-play1.svg`} alt="play" /></button>
       </section>
+
+      {/* 星星動畫 */}
+      <section className={styles.starAni}>
+        <div className={styles.starAll}></div>
+      </section>
+
 
       {/* Quest 區塊 */}
       <section className="quest">

@@ -1,5 +1,9 @@
+@use "sass:map";
+@use "./variable/var-color" as *;
+@use "./variable/var-font" as *;
+@use "./function/reset";
 .header {
-    padding: 1rem 2rem;
+    padding: 0 2rem;
   }
   
   .navbar {
@@ -23,7 +27,7 @@
     gap: 1.5rem;
   
     li a {
-      color: white;
+      color: $color-white;
       text-decoration: none;
       font-weight: bold;
   
@@ -32,19 +36,21 @@
       }
     }
   
-    // .login {
+    .login {
+      width: 45px;
+      height: 45px;
     //   background-color: white;
     //   color: #356c5f;
     //   padding: 0.3rem 1rem;
     //   border-radius: 20px;
-    // }
+    }
   }
   .burger {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
+    width: 45px;
+    height: 45px;
     background: none;
     border: none;
     padding: 0;
@@ -54,29 +60,39 @@
   
   
   .mobileMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #9cff91;
-    color: #000;
-    font-family: 'VT323', monospace;
+    position: absolute;
+    top:5%;
+    right:2%;
+    width: 318px;
+    height: 703px;
+    background-color: $color-light;
+    color:$color-dark;
+    // font-family: 'VT323', monospace;
     z-index: 1000;
-    padding: 2rem;
+    // padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0.95;
+padding: 16px;
   
+    border-radius: 17px;
+box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.25);
     ul {
-      margin-top: 2rem;
+      // margin-top: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
-      font-size: 2rem;
+      gap: 80px;
+
+    color:$color-dark;
+text-align: center;
+
+font-size: 24px;
+font-weight: 400;
     }
   
     .close {
+      margin-bottom: 16px;
       align-self: flex-end;
       font-size: 3rem;
       background: none;

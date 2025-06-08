@@ -21,23 +21,57 @@
       padding: 4rem 1.5rem;
       text-align: center;
     }
-  
+    
     .hero {
       padding-top: 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
   
-      .logo {
-        width: 120px;
+      .heroLogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+height: auto;
+        flex-shrink: 0;
+        
+      }
+      .heroAni {
+        width: 250px;
+height: 250px;
+
         margin: 0 auto;
         display: block;
+        
       }
   
-      .tagline {
+      .ctaBook {
+        border: none;
         margin-top: 1rem;
-        font-size: 1rem;
-        letter-spacing: 1px;
+        background: none;
+
       }
     }
-  
+.starAni {
+  width: 1440px;
+  height: 970px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+  .starAll {
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-image: url(/assets/star-all.svg);
+
+  }
     .quest {
       h2 {
         font-size: 1.5rem;
