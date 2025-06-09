@@ -1,4 +1,46 @@
 @charset "UTF-8";
+@keyframes tiltRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 /* reset CSS */
 * {
   box-sizing: border-box; /* 不累加邊框boder(outline)及內距 */
@@ -64,7 +106,7 @@ html, body {
   text-align: center;
 }
 .home .hero {
-  padding-top: 6rem;
+  margin: 15rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,6 +120,32 @@ html, body {
   width: 300px;
   height: auto;
   flex-shrink: 0;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+  text-align: center;
+  font-family: "Departure Mono";
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: -5px -5px 0 #FAF9F7, 5px -5px 0 #FAF9F7, -5px 5px 0 #FAF9F7, 5px 5px 0 #FAF9F7;
+}
+.home .hero .logodreamabit {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+  text-align: center;
+  font-family: "Departure Mono";
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: -5px -5px 0 #8FE388, 5px -5px 0 #8FE388, -5px 5px 0 #8FE388, 5px 5px 0 #8FE388;
 }
 .home .hero .heroAni {
   width: 250px;
@@ -86,26 +154,68 @@ html, body {
   display: block;
 }
 .home .hero .ctaBook {
-  border: none;
-  margin-top: 1rem;
-  background: none;
+  display: flex;
+  padding: 0px 5px 1px 9px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 11px;
+  border-radius: 10px;
+  border: 2px solid #2E2E2E;
+  background: #2E2E2E;
+  box-shadow: 3px 3px 4px 0px #000;
+  color: #FAF9F7;
+  font-family: "Departure Mono";
+  font-size: 28px;
+  font-weight: 400;
+}
+.home .hero .ctaBook:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
+}
+.home .hero .ctaBook:active {
+  transform: scale(0.95);
+}
+.home .hero .ctaBook img {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
 }
 .home .starAni {
   width: 1440px;
   height: 970px;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.home .starAll {
+.home .starAni .starAll {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-image: url(/assets/star-all.svg);
 }
+.home .quest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
 .home .quest h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #FAF9F7;
+  text-align: center;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--highlight, #8FE388);
+  font-family: "Departure Mono";
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: -1px -1px 0 #8FE388, 1px -1px 0 #8FE388, -1px 1px 0 #8FE388, 1px 1px 0 #8FE388;
 }
 .home .quest .quest-box {
   display: flex;

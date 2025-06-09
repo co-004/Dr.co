@@ -1,4 +1,46 @@
 @charset "UTF-8";
+@keyframes tiltRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 /* reset CSS */
 * {
   box-sizing: border-box; /* 不累加邊框boder(outline)及內距 */
@@ -62,11 +104,23 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #2F6251;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: -1.5px -1.5px 0 #8FE388, 1.5px -1.5px 0 #8FE388, -1.5px 1.5px 0 #8FE388, 1.5px 1.5px 0 #8FE388;
+}
 .logo img {
-  width: 325px;
-  height: 128px;
+  width: 70px;
+  height: auto;
+  padding: 5px;
 }
 
 .navRight {
@@ -74,7 +128,6 @@ html, body {
 }
 
 .navList {
-  list-style: none;
   display: flex;
   gap: 1.5rem;
 }
@@ -84,7 +137,7 @@ html, body {
   font-weight: bold;
 }
 .navList li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .navList .login {
   width: 45px;
@@ -107,7 +160,7 @@ html, body {
 .mobileMenu {
   position: absolute;
   top: 5%;
-  right: 2%;
+  right: 1.5%;
   width: 318px;
   height: 703px;
   background-color: #8FE388;
@@ -129,12 +182,29 @@ html, body {
   text-align: center;
   font-size: 24px;
   font-weight: 400;
+  text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
+}
+.mobileMenu ul li {
+  text-decoration: none;
+}
+.mobileMenu ul li:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
 .mobileMenu .close {
   margin-bottom: 16px;
   align-self: flex-end;
+  font-weight: 800;
   font-size: 3rem;
   background: none;
   border: none;
+  color: #FAF9F7;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.mobileMenu .close:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  animation: tiltRight 0.3s forwards;
 }

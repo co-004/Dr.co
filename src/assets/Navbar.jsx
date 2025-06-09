@@ -12,7 +12,7 @@ const Navbar = () => {
             <div className={styles.navbar}>
                 {/* Logo */}
                 <Link className={styles.logo} to="/">
-                    <img src={`${import.meta.env.BASE_URL}assets/logo.svg`} alt="DreamaBit Logo" />
+                    <img src={`${import.meta.env.BASE_URL}/babybit-0.svg`} alt="DreamaBit Logo" />DreamaBit
                 </Link>
 
                 {/* 導覽列連結 */}

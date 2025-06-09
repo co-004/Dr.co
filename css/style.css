@@ -54,6 +54,14 @@ html, body {
   font-family: "Mono", sans-serif;
 }
 
+@keyframes tiltRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

@@ -1,6 +1,15 @@
 @use "sass:meta";
 @use "../variable" as *;
 
+@keyframes tiltRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
 @keyframes rotate {
     0% {
       transform: rotate(0deg);
@@ -36,7 +45,3 @@
     }
   }
 
-  // @keyframes fade-b {
-  //     from { background-color: $alpha; }
-  //     to { background-color: $alpha-b30; }
-  // }

@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "./variable/var-color" as *;
 @use "./variable/var-font" as *;
+@use "./function/keyframe" as *;
 @use "./function/reset";
 .header {
     padding: 0 2rem;
@@ -10,19 +11,44 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: $color-main;
+
   }
   
-  .logo img {
-    width:325px;
-    height: 128px;
+  .logo  {
+
+      img {
+    width:70px;
+    height: auto;
+    padding: 5px;
+
   }
+    
+display: flex;
+align-items: center ;
+        color: #000000;
+// -webkit-text-stroke-width: 2px;
+// -webkit-text-stroke-color: $color-white;
+font-size: 36px;
+font-style: normal;
+font-weight: 800;
+  text-align: center;
+
+  // 多重 text-shadow 模擬描邊
+  text-shadow:
+    -1.5px -1.5px 0 $color-light,
+     1.5px -1.5px 0 $color-light,
+    -1.5px  1.5px 0 $color-light,
+     1.5px  1.5px 0 $color-light;
+  }
+  
+
   
   .navRight {
     display: flex;
   }
   
   .navList {
-    list-style: none;
     display: flex;
     gap: 1.5rem;
   
@@ -32,7 +58,8 @@
       font-weight: bold;
   
       &:hover {
-        text-decoration: underline;
+      text-decoration: none;
+
       }
     }
   
@@ -62,7 +89,7 @@
   .mobileMenu {
     position: absolute;
     top:5%;
-    right:2%;
+    right:1.5%;
     width: 318px;
     height: 703px;
     background-color: $color-light;
@@ -79,6 +106,8 @@ padding: 16px;
     border-radius: 17px;
 box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.25);
     ul {
+
+
       // margin-top: 2rem;
       display: flex;
       flex-direction: column;
@@ -89,15 +118,44 @@ text-align: center;
 
 font-size: 24px;
 font-weight: 400;
+  text-shadow:
+    -1.5px -1.5px 0 $color-main-2,
+     1.5px -1.5px 0 $color-main-2,
+    -1.5px  1.5px 0 $color-main-2,
+     1.5px  1.5px 0 $color-main-2;
+     li{
+      text-decoration: none; 
+        &:hover {
+            transform: scale(1.05);
+        filter: brightness(1.2);
+              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); // 👈 加這行產生陰影
+  }
+     }
+
+
     }
   
     .close {
       margin-bottom: 16px;
       align-self: flex-end;
+font-weight: 800;
+
       font-size: 3rem;
       background: none;
       border: none;
+      color: $color-white;
       cursor: pointer;
+  // -webkit-text-stroke: 0.2px $color-dark; // 外框色
+  // text-stroke: 0.2px $color-dark; // for other browsers 
+
+       transition: transform 0.3s ease;
+
+  &:hover {
+                transform: scale(1.05);
+        filter: brightness(1.2);
+    animation: tiltRight 0.3s forwards;
+  }
+      
     }
   }
     
