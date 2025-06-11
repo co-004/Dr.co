@@ -14,8 +14,101 @@
   padding-bottom: 4rem;
 
   section {
-    padding: 4rem 1.5rem;
+    // padding: 4rem 1.5rem;
+    margin: auto;
     text-align: center;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+    color: $color-white;
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--highlight, #8FE388);
+    font-family: "Departure Mono";
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-top: 2rem;
+
+    // 多重 text-shadow 模擬描邊
+    text-shadow:
+      -1px -1px 0 $color-light,
+      1px -1px 0 $color-light,
+      -1px 1px 0 $color-light,
+      1px 1px 0 $color-light;
+  }
+  .ctaMain{
+
+    display: flex;
+    padding: 0px 5px 1px 9px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 11px;
+
+    border-radius: 10px;
+    border: 2px solid $color-dark;
+    background: $color-dark;
+    box-shadow: 3px 3px 4px 0px #000;
+
+    color: $color-white;
+    font-family: "Departure Mono";
+    font-size: 28px;
+    font-weight: 400;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+      // color: $color-dark;
+        text-shadow:
+  -1.5px -1.5px 0 $color-main-2,
+   1.5px -1.5px 0 $color-main-2,
+  -1.5px  1.5px 0 $color-main-2,
+   1.5px  1.5px 0 $color-main-2;
+      
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    img {
+      pointer-events: none; // 確保 click 事件不被 img 吃掉
+              width: 24px;
+      height: 24px;
+    }
+
+
+  }
+  .aniSection {
+    width: 1440px;
+    height: 970px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .starAll {
+      width: 100%;
+      height: 100%;
+
+      background-size: cover;
+      background-image: url(/assets/star-all.svg);
+
+    }
+    .rainAll {
+
+      width:800px;
+height: 100%;
+
+      background-size: cover;
+      background-image: url(/assets/rain-all.svg);
+
+    }
   }
 
   .hero {
@@ -59,7 +152,7 @@
 
     }
 
-    .logodreamabit {
+    .logoDreamaBit {
       font-size: 1.5rem;
       margin-bottom: 1rem;
 
@@ -85,74 +178,18 @@
     }
 
     .heroAni {
-      width: 250px;
-      height: 250px;
+      width: 150px;
+      height: 150px;
 
       margin: 0 auto;
       display: block;
 
     }
 
-    .ctaBook {
-      display: flex;
-      padding: 0px 5px 1px 9px;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 11px;
 
-      border-radius: 10px;
-      border: 2px solid $color-dark;
-      background: $color-dark;
-      box-shadow: 3px 3px 4px 0px #000;
-
-      color: $color-white;
-      font-family: "Departure Mono";
-      font-size: 28px;
-      font-weight: 400;
-
-      &:hover {
-        transform: scale(1.05);
-        filter: brightness(1.2);
-        // color: $color-dark;
-          text-shadow:
-    -1.5px -1.5px 0 $color-main-2,
-     1.5px -1.5px 0 $color-main-2,
-    -1.5px  1.5px 0 $color-main-2,
-     1.5px  1.5px 0 $color-main-2;
-        
-      }
-
-      &:active {
-        transform: scale(0.95);
-      }
-
-      img {
-        pointer-events: none; // 確保 click 事件不被 img 吃掉
-                width: 24px;
-        height: 24px;
-      }
-
-    }
   }
 
-  .starAni {
-    width: 1440px;
-    height: 970px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-
-    .starAll {
-      width: 100%;
-      height: 100%;
-
-      background-size: cover;
-      background-image: url(/assets/star-all.svg);
-
-    }
-  }
 
   .quest {
     display: flex;
@@ -160,72 +197,74 @@
     justify-content: center;
     flex-shrink: 0;
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+ 
 
-      color: $color-white;
-      text-align: center;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: var(--highlight, #8FE388);
-      font-family: "Departure Mono";
-      font-size: 100px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      text-align: center;
-      margin-top: 2rem;
-
-      // 多重 text-shadow 模擬描邊
-      text-shadow:
-        -1px -1px 0 $color-light,
-        1px -1px 0 $color-light,
-        -1px 1px 0 $color-light,
-        1px 1px 0 $color-light;
-    }
-
-    .quest-box {
+    .questBox {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      flex-direction: column;
+      padding: 105px;
 
-      .bunny {
-        width: 80px;
-        margin-bottom: 1rem;
+      .questBunny {
+        width: 350px;
+        height: 350px;
       }
 
-      .quest-card {
-        background-color: #f0f0f0;
-        color: #333;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        width: 90%;
-        max-width: 300px;
+      .questCard {
+        display: flex;
+        width: 968px;
+        padding: 44px;
+        flex-direction: column;
+        align-items: flex-start;
 
-        button {
-          margin-top: 0.5rem;
-          padding: 0.3rem 1rem;
-          background: #000;
-          color: white;
-          border: none;
-          border-radius: 4px;
-        }
+        border-radius: 17px;
+opacity: 0.88;
+background-color: $color-white;
+box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.25);
+color: $color-dark;
+        // background-color: #f0f0f0;
+        // color: #333;
+h4{
+          color: var(--border, #2E2E2E);
+font-family: "Departure Mono";
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 80px;
+}
+p{
+  color: var(--border, #2E2E2E);
+font-family: "Departure Mono";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 60px;
+
+}
+
+
       }
     }
   }
 
   .journal {
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+
 
     p {
-      margin-bottom: 1rem;
+      overflow: hidden;
+color: var(--wh, #FAF9F7);
+text-overflow: ellipsis;
+white-space: nowrap;
+font-family: "Departure Mono";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
     }
 
-    .journal-cards {
+    .journalCards {
       display: flex;
       justify-content: center;
       gap: 1rem;
@@ -247,14 +286,7 @@
       }
     }
 
-    button {
-      margin-top: 1rem;
-      padding: 0.5rem 1.5rem;
-      background: #000;
-      color: white;
-      border: none;
-      border-radius: 4px;
-    }
+
   }
 
   .about {
