@@ -100,6 +100,10 @@ html, body {
   background-color: #2F6251;
   color: white;
   padding-bottom: 4rem;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 .home section {
   margin: auto;
@@ -156,6 +160,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .home .aniSection .starAll {
   width: 100%;
@@ -168,6 +173,18 @@ html, body {
   height: 100%;
   background-size: cover;
   background-image: url(/assets/rain-all.svg);
+}
+.home .aniSection .rain {
+  width: 73px;
+  height: 68px;
+  background-size: cover;
+  background-image: url(/assets/rain.svg);
+}
+.home .aniSection .bubble {
+  width: 100%;
+  height: 80%;
+  background-size: cover;
+  background-image: url(/assets/bubbleAll.svg);
 }
 .home .hero {
   margin: 15rem auto;
@@ -239,6 +256,7 @@ html, body {
   padding: 44px;
   flex-direction: column;
   align-items: flex-start;
+  gap: 60px;
   border-radius: 17px;
   opacity: 0.88;
   background-color: #FAF9F7;
@@ -252,7 +270,7 @@ html, body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 .home .quest .questBox .questCard p {
   color: var(--border, #2E2E2E);
@@ -261,7 +279,11 @@ html, body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 60px;
+}
+.home .journal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .home .journal p {
   overflow: hidden;
@@ -275,41 +297,127 @@ html, body {
   line-height: normal;
 }
 .home .journal .journalCards {
+  margin: 45px auto;
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
-.home .journal .journalCards .card {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  width: 120px;
-  font-size: 0.9rem;
+.home .journal .journalCards .journalCard {
+  display: flex;
+  width: 431px;
+  padding: 90px 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+  border-radius: 17px;
+  border: 5px solid #FAF9F7;
+  background: #C4C4C4;
+  box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.25);
 }
-.home .journal .journalCards .card.green {
-  background-color: #b6f1a9;
+.home .journal .journalCards .journalCard .journalIcon {
+  width: 150px;
+  height: 133px;
+  display: flex;
+  padding: 1.599px 0px 0px 2px;
+  justify-content: flex-end;
+  align-items: center;
 }
-.home .journal .journalCards .card.gray {
-  background-color: #e0e0e0;
+.home .journal .journalCards .journalCard span {
+  color: #000;
+  text-align: center;
+  font-family: "Departure Mono";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.home .about h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.home .journal .journalCards .journalCard p {
+  color: #000;
+  font-family: "Departure Mono";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.home .about .carousel {
-  width: 90%;
-  max-width: 400px;
-  margin: 0 auto;
-  height: 200px;
-  background-color: #dcdcdc;
-  border-radius: 1rem;
+.home .journal .journalCards .journalCard:hover {
+  background-color: #8FE388;
+}
+.home .about {
+  text-align: center;
+  margin-top: 4rem;
+  color: white;
+}
+.home .carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto;
+  gap: 1rem;
+}
+.home .carousel .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 30px;
+  border-radius: 17px;
+  border: 1px solid var(--highlight, #8FE388);
+  background: var(--wh, #FAF9F7);
+  box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.25);
+  width: 626px;
+  height: 521px;
+  flex-shrink: 0;
+}
+.home .carousel .card h3 {
+  color: var(--border, #2E2E2E);
+  font-family: "Departure Mono";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.home .carousel .card p {
+  margin: auto 20px;
+  text-align: start;
+  color: var(--border, #2E2E2E);
+  font-family: "Departure Mono";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.home .carousel .nav {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+.home .carousel .dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 8px;
+}
+.home .carousel .dot {
+  width: 10px;
+  height: 10px;
+  background: white;
+  opacity: 0.4;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.home .carousel .active {
+  background: #80ff80;
+  opacity: 1;
 }
 @media (min-width: 768px) {
   .home .quest-box {
     flex-direction: row;
     gap: 2rem;
   }
-  .home .journal-cards .card {
+  .home .journalCards .card {
     width: 160px;
   }
 }

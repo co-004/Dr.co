@@ -1,0 +1,95 @@
+@use "sass:map";
+@use "./variable/var-color" as *;
+@use "./variable/var-font" as *;
+@use "./function/keyframe" as *;
+@use "./function/reset";
+
+.footer{
+    display: flex;
+
+justify-content: center;
+align-items: center;
+background-color: $color-main-2;
+
+flex-shrink: 0;
+
+width: 1440px;
+height: 140px;
+flex-shrink: 0;
+}
+.backToTop {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    position: fixed;
+    right: 130px;
+    bottom: 50px;
+    z-index: 1;
+    cursor: pointer;
+    .show {
+        opacity: 1;
+        visibility: visible;
+    }
+    img {
+    width: 75px;
+    /* 設置圖標大小 */
+    padding: 0;
+    /* 去掉內邊距 */
+    border: none;
+    height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        /* 懸停時的輕微浮動效果 */
+    }
+}
+}
+
+
+.navList {
+    display: flex;
+    gap: 25px;
+    li a {
+        color: $color-white;
+        text-decoration: none;
+        font-weight: bold;
+    
+        &:hover {
+        text-decoration: none;
+  
+        }
+      }
+
+
+li {
+
+
+    // margin-top: 2rem;
+    display: flex;
+    gap: 80px;
+    color: var(--wh, #FAF9F7);
+    text-align: center;
+    
+    /* EN-24 */
+    font-family: "Departure Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+font-weight: 400;
+text-shadow:
+  -1.5px -1.5px 0 $color-main-2,
+   1.5px -1.5px 0 $color-main-2,
+  -1.5px  1.5px 0 $color-main-2,
+   1.5px  1.5px 0 $color-main-2;
+  
+      &:hover {
+          transform: scale(1.05);
+      filter: brightness(1.2);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); // 👈 加這行產生陰影
+}
+   
+}
+
+  }
