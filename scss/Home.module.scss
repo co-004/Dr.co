@@ -9,6 +9,8 @@
 
 
 .home {
+  font-family: "Mono", sans-serif;
+
   background-color: $color-main;
   color: white;
   padding-bottom: 4rem;
@@ -32,7 +34,6 @@
     text-align: center;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--highlight, #8FE388);
-    font-family: "Departure Mono";
     font-size: 100px;
     font-style: normal;
     font-weight: 400;
@@ -49,7 +50,6 @@
   }
 
   .ctaMain {
-
     display: flex;
     padding: 0px 5px 1px 9px;
     justify-content: flex-end;
@@ -62,7 +62,6 @@
     box-shadow: 3px 3px 4px 0px #000;
 
     color: $color-white;
-    font-family: "Departure Mono";
     font-size: 28px;
     font-weight: 400;
 
@@ -163,7 +162,6 @@
       text-align: center;
       // -webkit-text-stroke-width: 2px;
       // -webkit-text-stroke-color: $color-white;
-      font-family: "Departure Mono";
       font-size: 100px;
       font-style: normal;
       font-weight: 800;
@@ -188,7 +186,6 @@
       text-align: center;
       // -webkit-text-stroke-width: 2px;
       // -webkit-text-stroke-color: $color-white;
-      font-family: "Departure Mono";
       font-size: 100px;
       font-style: normal;
       font-weight: 800;
@@ -257,7 +254,6 @@
 
         h4 {
           color: var(--border, #2E2E2E);
-          font-family: "Departure Mono";
           font-size: 36px;
           font-style: normal;
           font-weight: 400;
@@ -267,12 +263,11 @@
 
         p {
           color: var(--border, #2E2E2E);
-          font-family: "Departure Mono";
           font-size: 32px;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
-
+          text-align: left;
         }
 
 
@@ -291,7 +286,6 @@
       color: var(--wh, #FAF9F7);
       text-overflow: ellipsis;
       white-space: nowrap;
-      font-family: "Departure Mono";
       font-size: 32px;
       font-style: normal;
       font-weight: 400;
@@ -332,7 +326,6 @@
         span {
           color: #000;
           text-align: center;
-          font-family: "Departure Mono";
           font-size: 28px;
           font-style: normal;
           font-weight: 400;
@@ -341,7 +334,6 @@
 
         p {
           color: #000;
-          font-family: "Departure Mono";
           font-size: 24px;
           font-style: normal;
           font-weight: 400;
@@ -391,7 +383,6 @@ height: 521px;
 flex-shrink: 0;
 h3 {
   color: var(--border, #2E2E2E);
-font-family: "Departure Mono";
 font-size: 32px;
 font-style: normal;
 font-weight: 400;
@@ -402,7 +393,6 @@ p {
   margin: auto 20px;
   text-align: start;
   color: var(--border, #2E2E2E);
-font-family: "Departure Mono";
 font-size: 28px;
 font-style: normal;
 font-weight: 400;

@@ -97,6 +97,7 @@ html, body {
 }
 
 .home {
+  font-family: "Mono", sans-serif;
   background-color: #2F6251;
   color: white;
   padding-bottom: 4rem;
@@ -116,7 +117,6 @@ html, body {
   text-align: center;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--highlight, #8FE388);
-  font-family: "Departure Mono";
   font-size: 100px;
   font-style: normal;
   font-weight: 400;
@@ -136,7 +136,6 @@ html, body {
   background: #2E2E2E;
   box-shadow: 3px 3px 4px 0px #000;
   color: #FAF9F7;
-  font-family: "Departure Mono";
   font-size: 28px;
   font-weight: 400;
 }
@@ -205,7 +204,6 @@ html, body {
   margin-bottom: 1rem;
   color: #000000;
   text-align: center;
-  font-family: "Departure Mono";
   font-size: 100px;
   font-style: normal;
   font-weight: 800;
@@ -219,7 +217,6 @@ html, body {
   margin-bottom: 1rem;
   color: #000000;
   text-align: center;
-  font-family: "Departure Mono";
   font-size: 100px;
   font-style: normal;
   font-weight: 800;
@@ -265,7 +262,6 @@ html, body {
 }
 .home .quest .questBox .questCard h4 {
   color: var(--border, #2E2E2E);
-  font-family: "Departure Mono";
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -274,11 +270,11 @@ html, body {
 }
 .home .quest .questBox .questCard p {
   color: var(--border, #2E2E2E);
-  font-family: "Departure Mono";
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-align: left;
 }
 .home .journal {
   display: flex;
@@ -290,7 +286,6 @@ html, body {
   color: var(--wh, #FAF9F7);
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: "Departure Mono";
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -327,7 +322,6 @@ html, body {
 .home .journal .journalCards .journalCard span {
   color: #000;
   text-align: center;
-  font-family: "Departure Mono";
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -335,7 +329,6 @@ html, body {
 }
 .home .journal .journalCards .journalCard p {
   color: #000;
-  font-family: "Departure Mono";
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -371,7 +364,6 @@ html, body {
 }
 .home .carousel .card h3 {
   color: var(--border, #2E2E2E);
-  font-family: "Departure Mono";
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -381,7 +373,6 @@ html, body {
   margin: auto 20px;
   text-align: start;
   color: var(--border, #2E2E2E);
-  font-family: "Departure Mono";
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
