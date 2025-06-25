@@ -9,7 +9,7 @@
 
 
 .home {
-  font-family: "Mono", sans-serif;
+  font-family: "Mono";
 
   background-color: $color-main;
   color: white;
@@ -50,6 +50,9 @@
   }
 
   .ctaMain {
+    
+  font-family: "Mono" !important;
+
     display: flex;
     padding: 0px 5px 1px 9px;
     justify-content: flex-end;
@@ -208,6 +211,8 @@
 
       margin: 0 auto;
       display: block;
+    animation: floatUp 1s ease-in-out infinite;
+
 
     }
 

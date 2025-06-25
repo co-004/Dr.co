@@ -1,12 +1,12 @@
 @use "sass:meta";
 @use "../variable" as *;
 
-@keyframes tiltRight {
+@keyframes tiltLeft {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(-20deg);
   }
 }
 
@@ -44,4 +44,15 @@
       transform: translate3d(0, 0, 0);
     }
   }
+  @keyframes floatUp {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px); // 向上浮動 10px
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 

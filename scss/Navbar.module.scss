@@ -5,13 +5,13 @@
 @use "./function/reset";
 .header {
     padding: 0 2rem;
+    margin: auto;
   }
   
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $color-main;
 
   }
   
@@ -51,6 +51,8 @@ font-weight: 800;
   .navList {
     display: flex;
     gap: 1.5rem;
+    align-items: center;
+
   
     li a {
       color: $color-white;
@@ -66,18 +68,24 @@ font-weight: 800;
     .login {
       width: 45px;
       height: 45px;
-    //   background-color: white;
-    //   color: #356c5f;
-    //   padding: 0.3rem 1rem;
-    //   border-radius: 20px;
+      background-color: $color-white;
+      border-radius: 99px;
+padding-top: 1.5px;
+
+      img {
+margin: auto;
+display: block;
+        width: 40px;
+        height: 40px;
+      }
     }
   }
   .burger {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background: none;
     border: none;
     padding: 0;
@@ -94,7 +102,6 @@ font-weight: 800;
     height: 703px;
     background-color: $color-light;
     color:$color-dark;
-    // font-family: 'VT323', monospace;
     z-index: 1000;
     // padding: 2rem;
     display: flex;
@@ -118,20 +125,26 @@ text-align: center;
 
 font-size: 24px;
 font-weight: 400;
-  text-shadow:
+
+     li a{
+    color:$color-dark;
+    text-shadow: none;
+
+      text-decoration: none; 
+        &:hover {
+    color:$color-white;
+    text-shadow:
     -1.5px -1.5px 0 $color-main-2,
      1.5px -1.5px 0 $color-main-2,
     -1.5px  1.5px 0 $color-main-2,
      1.5px  1.5px 0 $color-main-2;
-     li{
-      text-decoration: none; 
-        &:hover {
+
+
             transform: scale(1.05);
         filter: brightness(1.2);
-              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); // 👈 加這行產生陰影
+              // box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); // 陰影
   }
      }
-
 
     }
   
@@ -143,7 +156,12 @@ font-weight: 800;
       font-size: 3rem;
       background: none;
       border: none;
-      color: $color-white;
+      color: $color-dark;
+      // text-shadow:
+      // -1.5px -1.5px 0 $color-main,
+      //  1.5px -1.5px 0 $color-main,
+      // -1.5px  1.5px 0 $color-main,
+      //  1.5px  1.5px 0 $color-main;
       cursor: pointer;
   // -webkit-text-stroke: 0.2px $color-dark; // 外框色
   // text-stroke: 0.2px $color-dark; // for other browsers 
@@ -151,9 +169,15 @@ font-weight: 800;
        transition: transform 0.3s ease;
 
   &:hover {
-                transform: scale(1.05);
-        filter: brightness(1.2);
-    animation: tiltRight 0.3s forwards;
+    color: $color-white;
+    text-shadow:
+    -1.5px -1.5px 0 $color-main-2,
+     1.5px -1.5px 0 $color-main-2,
+    -1.5px  1.5px 0 $color-main-2,
+     1.5px  1.5px 0 $color-main-2;
+                transform: scale(1.025);
+        filter: brightness(0.9);
+    // animation: tiltLeft 0.3s forwards;
   }
       
     }

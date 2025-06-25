@@ -7,7 +7,7 @@ const Footer = () => {
   
   useEffect(() => {
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 1000);
+      setShowBackToTop(window.scrollY > 500);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,9 +33,7 @@ const Footer = () => {
           onClick={scrollToTop} 
           className={`${styles.backToTop} ${showBackToTop ? styles.show : ""}`}
           aria-label="Back to Top"
-        >
-          <img src={`${import.meta.env.BASE_URL}assets/top.svg`} alt="Back to Top" />
-        </button>
+        ><span>TO TOP</span>   </button>
 
         {/* 導覽列連結 */}
         <nav className={styles.navRight}>

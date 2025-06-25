@@ -3,7 +3,9 @@
 @use "./variable/var-font" as *;
 @use "./function/keyframe" as *;
 @use "./function/reset";
-
+.Footer {
+    position: relative;
+}
 .footer{
     display: flex;
 
@@ -20,31 +22,67 @@ flex-shrink: 0;
 .backToTop {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: transform 0.3s ease, visibility 0.5s ease;
     position: fixed;
-    right: 130px;
-    bottom: 50px;
-    z-index: 1;
+    right: 30px;
+    bottom: 15px;
+    z-index: 99;
     cursor: pointer;
-    .show {
-        opacity: 1;
-        visibility: visible;
-    }
-    img {
-    width: 75px;
-    /* 設置圖標大小 */
-    padding: 0;
-    /* 去掉內邊距 */
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-size:cover;
     border: none;
-    height: auto;
-    transition: transform 0.3s ease;
+    background-color: transparent;
+    background-image: url(../public/assets/babybit-3.svg);
+
+    span {
+    color: $color-white;
+    text-shadow:
+    -1.5px -1.5px 0 $color-main-2,
+     1.5px -1.5px 0 $color-main-2,
+    -1.5px  1.5px 0 $color-main-2,
+     1.5px  1.5px 0 $color-main-2;
+    position: fixed;
+    right: 36px;
+    bottom: 90px;
+    font-family: 'Mono', sans-serif;
+font-size: 14px;
+
+    }
+
 
     &:hover {
-        transform: translateY(-5px);
-        /* 懸停時的輕微浮動效果 */
+    // transform: scale(1.05);
+    animation: floatUp 1s ease-in-out infinite;
+
+    background-image: url(../public/assets/babybit-14.svg);
+    span{
+    opacity: 0;
+    visibility: hidden;
     }
+    }
+
 }
-}
+    .backToTop.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+        &:hover {
+            transform: scale(1.025);
+        }
+        &:active {
+            transform: translateY(5px);
+    animation: none;
+
+    
+        }
+    }
+  
+
+
+
+
 
 
 .navList {
