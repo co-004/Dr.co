@@ -1,10 +1,10 @@
 @charset "UTF-8";
-@keyframes tiltRight {
+@keyframes tiltLeft {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(-20deg);
   }
 }
 @keyframes rotate {
@@ -39,6 +39,17 @@
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 /* reset CSS */
@@ -97,7 +108,7 @@ html, body {
 }
 
 .home {
-  font-family: "Mono", sans-serif;
+  font-family: "Mono";
   background-color: #2F6251;
   color: white;
   padding-bottom: 4rem;
@@ -126,6 +137,7 @@ html, body {
   text-shadow: -1px -1px 0 #8FE388, 1px -1px 0 #8FE388, -1px 1px 0 #8FE388, 1px 1px 0 #8FE388;
 }
 .home .ctaMain {
+  font-family: "Mono" !important;
   display: flex;
   padding: 0px 5px 1px 9px;
   justify-content: flex-end;
@@ -197,7 +209,6 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
   height: auto;
   flex-shrink: 0;
   font-size: 1.5rem;
@@ -213,23 +224,52 @@ html, body {
   text-shadow: -5px -5px 0 #FAF9F7, 5px -5px 0 #FAF9F7, -5px 5px 0 #FAF9F7, 5px 5px 0 #FAF9F7;
 }
 .home .hero .logoDreamaBit {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
   color: #000000;
   text-align: center;
-  font-size: 100px;
+  font-size: 150px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
   text-align: center;
-  margin-top: 2rem;
   text-shadow: -5px -5px 0 #8FE388, 5px -5px 0 #8FE388, -5px 5px 0 #8FE388, 5px 5px 0 #8FE388;
 }
 .home .hero .heroAni {
-  width: 150px;
-  height: 150px;
+  width: 200px;
   margin: 0 auto;
   display: block;
+  animation: floatUp 600ms ease-in-out infinite;
+}
+.home .hero .ctaHero {
+  cursor: pointer;
+  font-family: "Mono" !important;
+  display: flex;
+  padding: 0px 5px 1px 9px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 11px;
+  border-radius: 10px;
+  border: 2px solid #2E2E2E;
+  background: #2E2E2E;
+  box-shadow: 3px 3px 4px 0px #000;
+  color: #FAF9F7;
+  font-size: 28px;
+  font-weight: 400;
+}
+.home .hero .ctaHero:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
+}
+.home .hero .ctaHero.hover .heroAni {
+  transform: scale(1.05) !important;
+}
+.home .hero .ctaHero:active {
+  transform: scale(0.95);
+}
+.home .hero .ctaHero img {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
 }
 .home .quest {
   display: flex;
@@ -403,7 +443,84 @@ html, body {
   background: #80ff80;
   opacity: 1;
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .home .hero {
+    margin: 15rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home .hero .heroLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000000;
+    text-align: center;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    margin-top: 2rem;
+    text-shadow: -5px -5px 0 #FAF9F7, 5px -5px 0 #FAF9F7, -5px 5px 0 #FAF9F7, 5px 5px 0 #FAF9F7;
+  }
+  .home .hero .logoDreamaBit {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000000;
+    text-align: center;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    margin-top: 2rem;
+    text-shadow: -5px -5px 0 #8FE388, 5px -5px 0 #8FE388, -5px 5px 0 #8FE388, 5px 5px 0 #8FE388;
+  }
+  .home .hero .heroAni {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    animation: floatUp 600ms ease-in-out infinite;
+  }
+  .home .hero .ctaHero {
+    cursor: pointer;
+    font-family: "Mono" !important;
+    display: flex;
+    padding: 0px 5px 1px 9px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 11px;
+    border-radius: 10px;
+    border: 2px solid #2E2E2E;
+    background: #2E2E2E;
+    box-shadow: 3px 3px 4px 0px #000;
+    color: #FAF9F7;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .home .hero .ctaHero:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
+  }
+  .home .hero .ctaHero.hover .heroAni {
+    transform: scale(1.05) !important;
+  }
+  .home .hero .ctaHero:active {
+    transform: scale(0.95);
+  }
+  .home .hero .ctaHero img {
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+  }
   .home .quest-box {
     flex-direction: row;
     gap: 2rem;

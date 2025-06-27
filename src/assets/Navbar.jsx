@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from "../../scss/Navbar.module.scss";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);
+    const location = useLocation();
     useEffect(() => {
         const handleClickOutside =(event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -21,12 +22,24 @@ const Navbar = () => {
             document.removeEventListener('mousedown',handleClickOutside);      
         };
     },[menuOpen]);
+    //回首頁變成置頂效果
+    const handleLogoClick = (e) => {
+        if (location.pathname === '/') {
+            e.preventDefault(); // 阻止預設的 Link 行為
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        // 如果不是首頁，讓 Link 正常跳轉
+    };
 
     return (
         <header className={styles.header}>
             <div className={styles.navbar}>
                 {/* Logo */}
-                <Link className={styles.logo} to="/">
+                <Link className={styles.logo} to="/"
+                onClick={handleLogoClick}>
                     <img src={`${import.meta.env.BASE_URL}/babybit-0.svg`} alt="DreamaBit Logo" />DreamaBit
                 </Link>
 

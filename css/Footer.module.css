@@ -1,10 +1,10 @@
 @charset "UTF-8";
-@keyframes tiltRight {
+@keyframes tiltLeft {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(-20deg);
   }
 }
 @keyframes rotate {
@@ -39,6 +39,17 @@
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 /* reset CSS */
@@ -96,6 +107,10 @@ html, body {
   font-family: "Mono", sans-serif;
 }
 
+.Footer {
+  position: relative;
+}
+
 .footer {
   display: flex;
   justify-content: center;
@@ -110,29 +125,49 @@ html, body {
 .backToTop {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: transform 0.3s ease, visibility 0.5s ease;
   position: fixed;
-  right: 130px;
-  bottom: 50px;
-  z-index: 1;
+  right: 30px;
+  bottom: 15px;
+  z-index: 99;
   cursor: pointer;
+  width: 120px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  background-color: transparent;
+  background-image: url(/assets/babybit-3.svg);
 }
-.backToTop .show {
+.backToTop span {
+  color: #FAF9F7;
+  text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
+  position: fixed;
+  right: 36px;
+  bottom: 90px;
+  font-family: "Mono", sans-serif;
+  font-size: 14px;
+}
+.backToTop:hover {
+  animation: floatUp 1s ease-in-out infinite;
+  background-image: url(/assets/babybit-14.svg);
+}
+.backToTop:hover span {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.backToTop.show {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0px);
 }
-.backToTop img {
-  width: 75px;
-  /* 設置圖標大小 */
-  padding: 0;
-  /* 去掉內邊距 */
-  border: none;
-  height: auto;
-  transition: transform 0.3s ease;
+.backToTop.show:hover {
+  transform: scale(1.025);
 }
-.backToTop img:hover {
-  transform: translateY(-5px);
-  /* 懸停時的輕微浮動效果 */
+.backToTop.show:active {
+  transform: translateY(5px);
+  animation: none;
 }
 
 .navList {

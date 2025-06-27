@@ -77,7 +77,6 @@
         1.5px -1.5px 0 $color-main-2,
         -1.5px 1.5px 0 $color-main-2,
         1.5px 1.5px 0 $color-main-2;
-
     }
 
     &:active {
@@ -154,7 +153,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 300px;
+      // width: 300px;
       height: auto;
       flex-shrink: 0;
 
@@ -178,23 +177,20 @@
         5px -5px 0 $color-white,
         -5px 5px 0 $color-white,
         5px 5px 0 $color-white;
-
     }
 
     .logoDreamaBit {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-
+      // margin-bottom: 1rem;
       color: #000000;
       text-align: center;
       // -webkit-text-stroke-width: 2px;
       // -webkit-text-stroke-color: $color-white;
-      font-size: 100px;
+      font-size: 150px;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
       text-align: center;
-      margin-top: 2rem;
+      // margin-top: 2rem;
 
       // 多重 text-shadow 模擬描邊
       text-shadow:
@@ -204,18 +200,57 @@
         5px 5px 0 $color-light;
 
     }
-
+// Hero區AniHero元件
     .heroAni {
-      width: 150px;
-      height: 150px;
-
+      width: 200px;
       margin: 0 auto;
       display: block;
-    animation: floatUp 1s ease-in-out infinite;
-
-
+    animation: floatUp 600ms ease-in-out infinite; 
     }
-
+    .ctaHero {
+      cursor: pointer;
+    
+      font-family: "Mono" !important;
+        display: flex;
+        padding: 0px 5px 1px 9px;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 11px;
+    
+        border-radius: 10px;
+        border: 2px solid $color-dark;
+        background: $color-dark;
+        box-shadow: 3px 3px 4px 0px #000;
+    
+        color: $color-white;
+        font-size: 28px;
+        font-weight: 400;
+    
+        &:hover {
+          transform: scale(1.05);
+          filter: brightness(1.2);
+          // color: $color-dark;
+          text-shadow:
+            -1.5px -1.5px 0 $color-main-2,
+            1.5px -1.5px 0 $color-main-2,
+            -1.5px 1.5px 0 $color-main-2,
+            1.5px 1.5px 0 $color-main-2;
+        }   
+        &.hover             .heroAni {
+          transform: scale(1.05) !important;
+            }
+        &:active {
+          transform: scale(0.95);
+        }
+    
+        img {
+          pointer-events: none; // 確保 click 事件不被 img 吃掉
+          width: 24px;
+          height: 24px;
+        }
+    
+    
+      }
 
   }
 
@@ -437,7 +472,122 @@ line-height: normal;
   }
   
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
+    .hero {
+      margin: 15rem auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+  
+      .heroLogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // width: 300px;
+        height: auto;
+        flex-shrink: 0;
+  
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+  
+        color: #000000;
+        text-align: center;
+        // -webkit-text-stroke-width: 2px;
+        // -webkit-text-stroke-color: $color-white;
+        font-size: 100px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        text-align: center;
+        margin-top: 2rem;
+  
+        // 多重 text-shadow 模擬描邊
+        text-shadow:
+          -5px -5px 0 $color-white,
+          5px -5px 0 $color-white,
+          -5px 5px 0 $color-white,
+          5px 5px 0 $color-white;
+      }
+  
+      .logoDreamaBit {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+  
+        color: #000000;
+        text-align: center;
+        // -webkit-text-stroke-width: 2px;
+        // -webkit-text-stroke-color: $color-white;
+        font-size: 100px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        text-align: center;
+        margin-top: 2rem;
+  
+        // 多重 text-shadow 模擬描邊
+        text-shadow:
+          -5px -5px 0 $color-light,
+          5px -5px 0 $color-light,
+          -5px 5px 0 $color-light,
+          5px 5px 0 $color-light;
+  
+      }
+  // Hero區AniHero元件
+      .heroAni {
+        width: 200px;
+        margin: 0 auto;
+        display: block;
+      animation: floatUp 600ms ease-in-out infinite; 
+      }
+      .ctaHero {
+        cursor: pointer;
+        font-family: "Mono" !important;
+          display: flex;
+          padding: 0px 5px 1px 9px;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 11px;
+      
+          border-radius: 10px;
+          border: 2px solid $color-dark;
+          background: $color-dark;
+          box-shadow: 3px 3px 4px 0px #000;
+      
+          color: $color-white;
+          font-size: 28px;
+          font-weight: 400;
+      
+          &:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+            // color: $color-dark;
+            text-shadow:
+              -1.5px -1.5px 0 $color-main-2,
+              1.5px -1.5px 0 $color-main-2,
+              -1.5px 1.5px 0 $color-main-2,
+              1.5px 1.5px 0 $color-main-2;
+          }   
+          &.hover             .heroAni {
+            transform: scale(1.05) !important;
+              }
+          &:active {
+            transform: scale(0.95);
+          }
+      
+          img {
+            pointer-events: none; // 確保 click 事件不被 img 吃掉
+            width: 24px;
+            height: 24px;
+          }
+      
+      
+        }
+  
+    }
+
     .quest-box {
       flex-direction: row;
       gap: 2rem;

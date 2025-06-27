@@ -1,10 +1,10 @@
 @charset "UTF-8";
-@keyframes tiltRight {
+@keyframes tiltLeft {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(-20deg);
   }
 }
 @keyframes rotate {
@@ -39,6 +39,17 @@
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 /* reset CSS */
@@ -98,13 +109,13 @@ html, body {
 
 .header {
   padding: 0 2rem;
+  margin: auto;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2F6251;
 }
 
 .logo {
@@ -130,6 +141,7 @@ html, body {
 .navList {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 .navList li a {
   color: #FAF9F7;
@@ -142,14 +154,23 @@ html, body {
 .navList .login {
   width: 45px;
   height: 45px;
+  background-color: #FAF9F7;
+  border-radius: 99px;
+  padding-top: 1.5px;
+}
+.navList .login img {
+  margin: auto;
+  display: block;
+  width: 40px;
+  height: 40px;
 }
 
 .burger {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   background: none;
   border: none;
   padding: 0;
@@ -182,15 +203,17 @@ html, body {
   text-align: center;
   font-size: 24px;
   font-weight: 400;
-  text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
 }
-.mobileMenu ul li {
+.mobileMenu ul li a {
+  color: #2E2E2E;
+  text-shadow: none;
   text-decoration: none;
 }
-.mobileMenu ul li:hover {
+.mobileMenu ul li a:hover {
+  color: #FAF9F7;
+  text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
   transform: scale(1.05);
   filter: brightness(1.2);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
 .mobileMenu .close {
   margin-bottom: 16px;
@@ -199,12 +222,13 @@ html, body {
   font-size: 3rem;
   background: none;
   border: none;
-  color: #FAF9F7;
+  color: #2E2E2E;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 .mobileMenu .close:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-  animation: tiltRight 0.3s forwards;
+  color: #FAF9F7;
+  text-shadow: -1.5px -1.5px 0 #2F5A41, 1.5px -1.5px 0 #2F5A41, -1.5px 1.5px 0 #2F5A41, 1.5px 1.5px 0 #2F5A41;
+  transform: scale(1.025);
+  filter: brightness(0.9);
 }

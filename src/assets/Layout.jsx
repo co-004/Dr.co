@@ -16,9 +16,11 @@ export default function Layout() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      if (scrollY > 10 && !hasScrolled) {
+      if (scrollY > 100) {
         setShowNavbar(true);   // 顯示 Navbar
-        setHasScrolled(true);  // 之後不再隱藏
+      }
+      else {
+        setShowNavbar(false);  // 回到頂部隱藏
       }
     };
 

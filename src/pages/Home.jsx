@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../scss/Home.module.scss";
+import AniHero from "../components/AniHero";
 
 const slides = [
   {
@@ -22,7 +23,6 @@ export default function Home() {
   const navigate = useNavigate();
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [slideIndex, setSlideIndex] = useState(1); // 統一使用 slideIndex
-  
   // 修正輪播功能
   const prevSlide = () => {
     setSlideIndex((slideIndex - 1 + slides.length) % slides.length);
@@ -46,14 +46,11 @@ export default function Home() {
       <div className={styles.home}>
         {/* Hero 區塊 */}
         <section className={styles.hero}>
-          <div className={styles.heroLogo}>
             <div className={styles.logoDreamaBit}>DreamaBit</div>
-            <img className={styles.heroAni} src={`${import.meta.env.BASE_URL}babybit-0.svg`} alt="DreamaBit baby" />
+          <div className={styles.heroLogo}>
+            <AniHero 
+            />
           </div>
-          <button className={styles.ctaMain} onClick={() => navigate('/book')}>
-            <img src={`${import.meta.env.BASE_URL}assets/play.svg`} alt="play" />
-            See my dreams!
-          </button>
         </section>
 
         {/* 星星動畫 */}
